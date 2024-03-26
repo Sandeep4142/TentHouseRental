@@ -39,7 +39,7 @@
                     <form id="addProductForm">
                         <div class="mb-3">
                             <label for="productTitle" class="form-label">Product Title</label>
-                            <input type="text" class="form-control" id="productTitle" required>
+                            <input type="text" class="form-control" id="productTitle" required maxlength="50">
                         </div>
                         <div class="mb-3">
                             <label for="quantityTotal" class="form-label">Quantity Total</label>
@@ -77,7 +77,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="updateQuantityTotal" class="form-label">Quantity Total</label>
-                            <input type="number" class="form-control" id="updateQuantityTotal" required min="0">
+                            <input type="number" class="form-control" id="updateQuantityTotal" required min="1" step="1">
                         </div>
                         <div class="mb-3">
                             <label for="updateQuantityBooked" class="form-label">Quantity Booked</label>
@@ -85,7 +85,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="updatePrice" class="form-label">Price</label>
-                            <input type="number" class="form-control" id="updatePrice" required min="0">
+                            <input type="number" class="form-control" id="updatePrice" required min="1">
                         </div>
                         <button type="submit" class="btn btn-primary">Update Product</button>
                     </form>

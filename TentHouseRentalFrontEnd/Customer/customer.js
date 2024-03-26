@@ -29,6 +29,7 @@ function populateCustomerTable() {
         },
         error: function (xhr, textStatus, errorThrown) {
             console.log('Error:', errorThrown);
+            alert("Failed ! Something is wrong ");
         }
     });
 }
@@ -58,6 +59,7 @@ function addCustomer() {
         },
         error: function (xhr, textStatus, errorThrown) {
             console.log('Error:', errorThrown);
+            alert("Failed ! Something is wrong ");
         }
     });
 }

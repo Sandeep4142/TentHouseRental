@@ -191,6 +191,8 @@ function removeAllTransactions() {
         },
         error: function(xhr, status, error) {
             console.error('Error occurred while removing transactions:', error);
+            alert("Failed ! Something is wrong ");
+
         }
     });
 }

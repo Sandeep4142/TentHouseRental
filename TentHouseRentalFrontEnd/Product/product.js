@@ -39,6 +39,7 @@ function populateProductTable() {
         },
         error: function (xhr, textStatus, errorThrown) {
             console.log('Error:', errorThrown);
+            alert("Failed ! Something is wrong ");
         }
     });
 }
