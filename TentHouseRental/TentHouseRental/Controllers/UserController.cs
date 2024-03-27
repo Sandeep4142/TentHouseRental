@@ -14,12 +14,12 @@ namespace TentHouseRental.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly ITentHouseRentalService houseRentalService;
+        private readonly ITentHouseRentalService tentHouseRentalService;
         private readonly IConfiguration config;
 
-        public UserController(ITentHouseRentalService houseRentalService, IConfiguration config)
+        public UserController(ITentHouseRentalService tentHouseRentalService, IConfiguration config)
         {
-            this.houseRentalService = houseRentalService;
+            this.tentHouseRentalService = tentHouseRentalService;
             this.config = config;
         }
 
@@ -31,12 +31,12 @@ namespace TentHouseRental.Controllers
                 return BadRequest(ModelState);
             }
 
-            int userId = await houseRentalService.IsUserExist(user.Email, user.Password);
+            int userId = await tentHouseRentalService.IsUserExist(user.Email, user.Password);
 
             if (userId > 0)
             {
                 var token = GenerateToken();
-                var response = Ok(new { token = token });
+                var response = Ok(new { token });
                 return response;
             }
             else if (userId == 0)

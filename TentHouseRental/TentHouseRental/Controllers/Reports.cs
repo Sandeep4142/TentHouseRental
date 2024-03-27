@@ -11,38 +11,38 @@ namespace TentHouseRental.Controllers
     [Authorize]
     public class Reports : ControllerBase
     {
-        private readonly ITentHouseRentalService houseRentalService;
+        private readonly ITentHouseRentalService tentHouseRentalService;
 
-        public Reports(ITentHouseRentalService houseRentalService)
+        public Reports(ITentHouseRentalService tentHouseRentalService)
         {
-            this.houseRentalService = houseRentalService;
+            this.tentHouseRentalService = tentHouseRentalService;
         }
 
         [HttpGet("InventorySummaryReport")]
         public async Task<ActionResult> GetInventorySummaryReport()
         {
-            var productList = await houseRentalService.GetAllProduct();
+            var productList = await tentHouseRentalService.GetAllProduct();
             return Ok(productList);
         }
 
         [HttpGet("InventoryDetailedReport")]
         public async Task<ActionResult> GetInventoryDetailedReport()
         {
-            var detailedReport = await houseRentalService.GetInventoryDetailedReport();
+            var detailedReport = await tentHouseRentalService.GetInventoryDetailedReport();
             return Ok(detailedReport);
         }
 
         [HttpPost("InventoryDetailedReportByDate/{date}")]
         public async Task<ActionResult> GetInventoryDetailedReportByDate(DateTime date)
         {
-            var detailedReport = await houseRentalService.GetInventoryDetailedReportByDate(date);
+            var detailedReport = await tentHouseRentalService.GetInventoryDetailedReportByDate(date);
             return Ok(detailedReport);
         }
 
         [HttpPost("InventoryDetailedReportByMonth/{month}")]
         public async Task<ActionResult> GetInventoryDetailedReportByMonth(DateTime month)
         {
-            var detailedReport = await houseRentalService.GetInventoryDetailedReportByMonth(month);
+            var detailedReport = await tentHouseRentalService.GetInventoryDetailedReportByMonth(month);
             return Ok(detailedReport);
         }
 

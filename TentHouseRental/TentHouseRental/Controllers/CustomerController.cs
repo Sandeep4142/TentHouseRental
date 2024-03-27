@@ -11,24 +11,24 @@ namespace TentHouseRental.Controllers
     [Authorize]
     public class CustomerController : ControllerBase
     {
-        private readonly ITentHouseRentalService houseRentalService;
+        private readonly ITentHouseRentalService tentHouseRentalService;
 
-        public CustomerController(ITentHouseRentalService houseRentalService)
+        public CustomerController(ITentHouseRentalService tentHouseRentalService)
         {
-            this.houseRentalService = houseRentalService;
+            this.tentHouseRentalService = tentHouseRentalService;
         }
 
         [HttpGet]
         public async Task<ActionResult> GetAllCustomer()
         {
-            var customerList = await houseRentalService.GetAllCustomer();
+            var customerList = await tentHouseRentalService.GetAllCustomer();
             return Ok(customerList);
         }
 
         [HttpPost]
         public async Task<ActionResult> AddCustomer(CustomerModel customer)
         {
-            var response = await houseRentalService.AddCustomer(customer);
+            var response = await tentHouseRentalService.AddCustomer(customer);
             return Ok(response);
         }
 

@@ -12,45 +12,45 @@ namespace TentHouseRental.Controllers
     [Authorize]
     public class ProductController : ControllerBase
     {
-        private readonly ITentHouseRentalService houseRentalService;
+        private readonly ITentHouseRentalService tentHouseRentalService;
 
-        public ProductController(ITentHouseRentalService houseRentalService)
+        public ProductController(ITentHouseRentalService tentHouseRentalService)
         {
-            this.houseRentalService = houseRentalService;
+            this.tentHouseRentalService = tentHouseRentalService;
         }
 
         [HttpGet]
         public async Task<ActionResult> GetAllProduct()
         {
-            var productList = await houseRentalService.GetAllProduct();
+            var productList = await tentHouseRentalService.GetAllProduct();
             return Ok(productList);
         }
 
         [HttpGet("{productId}")]
         public async Task<ActionResult> GetProductById(int productId)
         {
-            var product = await houseRentalService.GetProductById(productId);
+            var product = await tentHouseRentalService.GetProductById(productId);
             return Ok(product);
         }
 
         [HttpPost]
         public async Task<ActionResult> AddProduct(ProductModel product)
         {
-            var response = await houseRentalService.AddProduct(product);
+            var response = await tentHouseRentalService.AddProduct(product);
             return Ok(response);
         }
 
         [HttpPut("{productId}")]
         public async Task<ActionResult> UpdateProduct(int productId, ProductModel product)
         {
-            var response = await houseRentalService.UpdateProduct(productId, product);
+            var response = await tentHouseRentalService.UpdateProduct(productId, product);
             return Ok(response);
         }
 
         [HttpDelete("{productId}")]
         public async Task<ActionResult> DeleteProduct(int productId)
         {
-            var response = await houseRentalService.RemoveProduct(productId);
+            var response = await tentHouseRentalService.RemoveProduct(productId);
             return Ok(response);
         }
 
