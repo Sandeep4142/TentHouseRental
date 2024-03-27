@@ -39,7 +39,7 @@
                     <form id="addProductForm">
                         <div class="mb-3">
                             <label for="productTitle" class="form-label">Product Title</label>
-                            <input type="text" class="form-control" id="productTitle" required maxlength="50">
+                            <input type="text" class="form-control" id="productTitle" pattern="[A-Za-z].*\S+.*" required maxlength="50">
                         </div>
                         <div class="mb-3">
                             <label for="quantityTotal" class="form-label">Quantity Total</label>
@@ -53,7 +53,9 @@
                             <label for="price" class="form-label">Price</label>
                             <input type="number" class="form-control" id="price" required min="1">
                         </div>
-                        <button type="submit" class="btn btn-primary">Add Product</button>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Add Product</button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -73,7 +75,7 @@
                         <input type="hidden" id="updateProductId">
                         <div class="mb-3">
                             <label for="updateProductTitle" class="form-label">Product Title</label>
-                            <input type="text" class="form-control" id="updateProductTitle" required maxlength="50">
+                            <input type="text" class="form-control" id="updateProductTitle" pattern="[A-Za-z].*\S+.*" required maxlength="50">
                         </div>
                         <div class="mb-3">
                             <label for="updateQuantityTotal" class="form-label">Quantity Total</label>
@@ -87,7 +89,9 @@
                             <label for="updatePrice" class="form-label">Price</label>
                             <input type="number" class="form-control" id="updatePrice" required min="1">
                         </div>
-                        <button type="submit" class="btn btn-primary">Update Product</button>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Update Product</button>
+                        </div>
                     </form>
                 </div>
             </div>

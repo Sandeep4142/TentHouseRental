@@ -16,7 +16,7 @@ function populateCustomerTable() {
             'Authorization': 'Bearer ' + (localStorage.getItem('jwtToken') || null)
         },
         success: function (data) {
-            var customerTable = $('#customerTable').DataTable({"ordering": false}).clear().draw();
+            var customerTable = $('#customerTable').DataTable().clear().draw();
             $.each(data, function (index, customer) {
                 customerTable.row.add([
                     //customer.customerId,
@@ -29,7 +29,6 @@ function populateCustomerTable() {
         },
         error: function (xhr, textStatus, errorThrown) {
             console.log('Error:', errorThrown);
-            alert("Failed ! Something is wrong ");
         }
     });
 }

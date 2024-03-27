@@ -35,9 +35,11 @@
                     <form id="addCustomerForm">
                         <div class="mb-3">
                             <label for="customerName" class="form-label">Customer Name</label>
-                            <input type="text" class="form-control" id="customerName" required maxlength="50">
+                            <input type="text" class="form-control" id="customerName" pattern="[A-Za-z].*\S+.*" required maxlength="50">
                         </div>
-                        <button type="submit" class="btn btn-primary">Add Customer</button>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Add Customer</button>
+                        </div>
                     </form>
                 </div>
             </div>
